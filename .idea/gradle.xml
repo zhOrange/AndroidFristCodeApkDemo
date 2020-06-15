@@ -10,6 +10,34 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/broadcasttest" />
+            <option value="$PROJECT_DIR$/cahtuidemo" />
+            <option value="$PROJECT_DIR$/cameraalbumdemo" />
+            <option value="$PROJECT_DIR$/cardviewdemo" />
+            <option value="$PROJECT_DIR$/contactsdemo" />
+            <option value="$PROJECT_DIR$/databasedemo" />
+            <option value="$PROJECT_DIR$/downloaddemo" />
+            <option value="$PROJECT_DIR$/filestorage" />
+            <option value="$PROJECT_DIR$/forceoffline" />
+            <option value="$PROJECT_DIR$/fragmentdemo" />
+            <option value="$PROJECT_DIR$/lifecycledemo" />
+            <option value="$PROJECT_DIR$/listviewdemo" />
+            <option value="$PROJECT_DIR$/litepaldemo" />
+            <option value="$PROJECT_DIR$/materialdesignuidemo" />
+            <option value="$PROJECT_DIR$/networkdemo" />
+            <option value="$PROJECT_DIR$/newsfragment" />
+            <option value="$PROJECT_DIR$/notificationdemo" />
+            <option value="$PROJECT_DIR$/orangeweather" />
+            <option value="$PROJECT_DIR$/playaudiodemo" />
+            <option value="$PROJECT_DIR$/playvideodemo" />
+            <option value="$PROJECT_DIR$/providerdemo" />
+            <option value="$PROJECT_DIR$/recyclerviewdemo" />
+            <option value="$PROJECT_DIR$/rememberpasswd" />
+            <option value="$PROJECT_DIR$/runtimepermissiondemo" />
+            <option value="$PROJECT_DIR$/servicedemo" />
+            <option value="$PROJECT_DIR$/sharedpreferencesdemo" />
+            <option value="$PROJECT_DIR$/uidemo" />
+            <option value="$PROJECT_DIR$/webviewdemo" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
