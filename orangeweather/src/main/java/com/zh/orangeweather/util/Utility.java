@@ -2,9 +2,11 @@ package com.zh.orangeweather.util;
 
 import android.text.TextUtils;
 
+import com.google.gson.Gson;
 import com.zh.orangeweather.db.City;
 import com.zh.orangeweather.db.Country;
 import com.zh.orangeweather.db.Province;
+import com.zh.orangeweather.gson.Weather;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -68,6 +70,18 @@ public class Utility {
             }
         }
         return false;
+    }
+
+    public static Weather handleWeatherResponse(String response){
+        try{
+            JSONObject jsonObject = new JSONObject(response);
+            JSONArray jsonArray = jsonObject.getJSONArray("HeWeather");
+            String weatherContent = jsonArray.getJSONObject(0).toString();
+            return new Gson().fromJson(weatherContent, Weather.class);
+        }catch (JSONException e){
+            e.printStackTrace();
+        }
+        return null;
     }
 
 }
