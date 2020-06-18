@@ -1,4 +1,4 @@
-package com.zh.orangeweather;
+package com.zh.orangeweather.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.zh.orangeweather.R;
 import com.zh.orangeweather.util.HttpUtil;
 
 import org.jetbrains.annotations.NotNull;
