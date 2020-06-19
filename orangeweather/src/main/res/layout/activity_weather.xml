@@ -6,28 +6,40 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.WeatherActivity">
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/swipe_refresh"
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <ScrollView
-            android:id="@+id/weather_layout"
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ScrollView
+                android:id="@+id/weather_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none"
+                android:overScrollMode="never">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <include layout="@layout/weather_title"/>
+                    <include layout="@layout/weather_now"/>
+                    <include layout="@layout/weather_forecast"/>
+                    <include layout="@layout/weather_aqi"/>
+                    <include layout="@layout/weather_suggestion"/>
+                </LinearLayout>
+            </ScrollView>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+        <fragment
+            android:id="@+id/choose_area_fragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scrollbars="none"
-            android:overScrollMode="never">
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <include layout="@layout/weather_title"/>
-                <include layout="@layout/weather_now"/>
-                <include layout="@layout/weather_forecast"/>
-                <include layout="@layout/weather_aqi"/>
-                <include layout="@layout/weather_suggestion"/>
-            </LinearLayout>
-        </ScrollView>
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+            android:name="com.zh.orangeweather.view.ChooseAreaFragment"
+            android:layout_gravity= "start"/>
+    </androidx.drawerlayout.widget.DrawerLayout>
+
 
 
 </FrameLayout>
