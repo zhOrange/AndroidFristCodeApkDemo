@@ -1,5 +1,6 @@
 package com.zh.orangeweather.view;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -20,6 +21,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import com.zh.orangeweather.R;
 import com.zh.orangeweather.gson.Forecast;
 import com.zh.orangeweather.gson.Weather;
+import com.zh.orangeweather.service.AutoUpdateService;
 import com.zh.orangeweather.util.HttpUtil;
 import com.zh.orangeweather.util.Utility;
 
@@ -111,6 +113,7 @@ public class WeatherActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         Toast.makeText(WeatherActivity.this, "获取天气信息失败", Toast.LENGTH_SHORT).show();
+                        swipeRefreshLayout.setRefreshing(false);
                     }
                 });
             }
@@ -124,6 +127,8 @@ public class WeatherActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         if(weather != null && "ok".equals(weather.status)){
+                            Intent intent = new Intent(WeatherActivity.this, AutoUpdateService.class);
+                            startService(intent);
                             SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(WeatherActivity.this).edit();
                             editor.putString("weather", responseText);
                             editor.apply();
