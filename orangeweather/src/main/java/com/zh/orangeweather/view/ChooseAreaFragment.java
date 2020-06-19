@@ -36,6 +36,9 @@ import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
 
+/**
+ * 省\市信息显示fragment
+ */
 public class ChooseAreaFragment extends Fragment {
     private static final String TAG = "ChooseAreaFragment";
     public static final int LEVEL_PROVINCE = 0;
@@ -76,12 +79,15 @@ public class ChooseAreaFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if(currentLevel == LEVEL_PROVINCE){
+                    //当前为省的话,查询省对应的市
                     selectedProvince = provinceList.get(position);
                     queryCities();
                 }else if(currentLevel == LEVEL_CITY){
+                    //当前为市的话,查询市对应的县
                     selectedCity = cityList.get(position);
                     queryCountries();
                 }else if(currentLevel == LEVEL_COUNTRY){
+                    //当前为县的话,查询对应的天气信息
                     String weatherId = countryList.get(position).getWeatherId();
                     Intent intent = new Intent(getActivity(), WeatherActivity.class);
                     intent.putExtra("weather_id", weatherId);

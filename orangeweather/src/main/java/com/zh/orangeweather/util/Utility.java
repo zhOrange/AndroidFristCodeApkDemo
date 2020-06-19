@@ -13,6 +13,11 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Utility {
+    /**
+     * 处理省份查询请求response信息,将获得的Province添加到数据库中
+     * @param response 返回response实体
+     * @return
+     */
     public static boolean handleProvinceResponse(String response){
         if(!TextUtils.isEmpty(response)){
             try{
@@ -32,6 +37,12 @@ public class Utility {
         return false;
     }
 
+    /**
+     * 处理city请求response信息,将获得的city添加到数据库中
+     * @param response 请求返回的response实体
+     * @param provinceId 所属省份Province id.
+     * @return
+     */
     public static boolean handleCityResponse(String response, int provinceId){
         if(!TextUtils.isEmpty(response)){
             try{
@@ -52,6 +63,12 @@ public class Utility {
         return false;
     }
 
+    /**
+     * 处理Country请求response信息,将获得的Country添加到数据库中
+     * @param response 返回response实体
+     * @param cityId 所属city id
+     * @return
+     */
     public static boolean handleCountryResponse(String response, int cityId){
         if(!TextUtils.isEmpty(response)){
             try{
@@ -72,11 +89,17 @@ public class Utility {
         return false;
     }
 
+    /**
+     * 处理天气查询数据
+     * @param response 请求返回response实体
+     * @return 解析得到的天气信息类.
+     */
     public static Weather handleWeatherResponse(String response){
         try{
             JSONObject jsonObject = new JSONObject(response);
             JSONArray jsonArray = jsonObject.getJSONArray("HeWeather");
             String weatherContent = jsonArray.getJSONObject(0).toString();
+            //利用Gson解析weatherContent
             return new Gson().fromJson(weatherContent, Weather.class);
         }catch (JSONException e){
             e.printStackTrace();

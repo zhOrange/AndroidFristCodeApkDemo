@@ -2,9 +2,21 @@ package com.zh.orangeweather.db;
 
 import org.litepal.crud.LitePalSupport;
 
+/**
+ * 数据库 Province表.
+ */
 public class Province extends LitePalSupport {
+    /**
+     * id
+     */
     private int id;
+    /**
+     * Province 名称
+     */
     private String provinceName;
+    /**
+     * province 代号
+     */
     private int provinceCode;
 
     public int getId() {

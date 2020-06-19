@@ -2,10 +2,25 @@ package com.zh.orangeweather.db;
 
 import org.litepal.crud.LitePalSupport;
 
+/**
+ * 数据库 City表.
+ */
 public class City extends LitePalSupport {
+    /**
+     * id
+     */
     private int id;
+    /**
+     * City 名称
+     */
     private String cityName;
+    /**
+     * City 代号
+     */
     private int cityCode;
+    /**
+     * 所属province代号
+     */
     private int provinceId;
 
     public int getId() {
